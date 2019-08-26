@@ -1,7 +1,6 @@
 # myQuizGame
 
-# Javascript / NodeJS sans framework
+# Jeu de question / réponse
 
-Jeu de question / réponse
-
-Utiliser les fichiers JSON
+Manipulation des fichiers JSON
+Javascript / NodeJS sans framework
