@@ -3,29 +3,29 @@
         "difficulte": "facile",
         "desc": "En quelle année a ete cree JavaScript ?",
         "reponseA": 2000,
-        "responseB": 1998,
-        "responseC": 1995,
-        "responseD": 1973,
-        "bonneResponse": "responseC"
+        "reponseB": 1998,
+        "reponseC": 1995,
+        "reponseD": 1973,
+        "bonneReponse": "responseC"
     },
 
     "question2": {
         "difficulte": "moyenne",
         "desc": "Qui est l'inventeur de JavaScript ?",
         "reponseA": "Brendan Eich",
-        "responseB": "Guido van Rossum",
-        "responseC": "Mark Zuckerberg",
-        "responseD": "James Gosling",
-        "bonneResponse": "response1"
+        "reponseB": "Guido van Rossum",
+        "reponseC": "Mark Zuckerberg",
+        "reponseD": "James Gosling",
+        "bonneReponse": "response1"
     },
 
     "question3": {
         "difficulte": "difficile",
-        "desc": "L'événement 'onMouseUp' se produit quand l'utilisateur ?",
+        "desc": "L'événement 'onMouseUp' se produit quand l'utilisateur... ?",
         "reponseA": "clique sur un objet",
-        "responseB": "clique en déplaçant la souris sur l'objet",
-        "responseC": "relache le bouton de la souris",
-        "responseD": "place le pointeur de la souris sur un objet",
-        "bonneResponse": "responseC"
+        "reponseB": "clique en déplaçant la souris sur l'objet",
+        "reponseC": "relache le bouton de la souris",
+        "reponseD": "place le pointeur de la souris sur un objet",
+        "bonneReponse": "responseC"
     }
 }
