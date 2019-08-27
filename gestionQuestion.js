@@ -1,11 +1,12 @@
+var readline = require("readline-sync");
 var questionnaire = {
   afficherUneQuestion: function(question) {
     var txt = "";
     txt += question.desc + "\n";
-    txt += question.reponseA + "\n";
-    txt += question.reponseB + "\n";
-    txt += question.reponseC + "\n";
-    txt += question.reponseD;
+    txt += "A : " + question.reponseA + "\n";
+    txt += "B : " + question.reponseB + "\n";
+    txt += "C : " + question.reponseC + "\n";
+    txt += "D : " + question.reponseD;
     console.log(txt);
   },
 
@@ -23,9 +24,17 @@ var questionnaire = {
         this.retourneNombreQuestionDuQuestionnaire(questionnaire) +
         1
     );
-    this.afficherUneQuestion(
-      questionnaire["question" + numeroQuestionAleatoire]
-    );
+    return questionnaire["question" + numeroQuestionAleatoire];
+  },
+  saisirReponse() {
+    return readline.question("Quel est votre choix (A - B - C - D)?");
+  },
+  estBonneReponse(question, reponse) {
+    if (reponse === question.bonneReponse) {
+      return true;
+    } else {
+      return false;
+    }
   }
 };
 

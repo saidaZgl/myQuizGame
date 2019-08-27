@@ -6,7 +6,7 @@
         "reponseB": 1998,
         "reponseC": 1995,
         "reponseD": 1973,
-        "bonneReponse": "responseC"
+        "bonneReponse": "C"
     },
 
     "question2": {
@@ -16,7 +16,7 @@
         "reponseB": "Guido van Rossum",
         "reponseC": "Mark Zuckerberg",
         "reponseD": "James Gosling",
-        "bonneReponse": "response1"
+        "bonneReponse": "A"
     },
 
     "question3": {
@@ -26,6 +26,6 @@
         "reponseB": "clique en déplaçant la souris sur l'objet",
         "reponseC": "relache le bouton de la souris",
         "reponseD": "place le pointeur de la souris sur un objet",
-        "bonneReponse": "responseC"
+        "bonneReponse": "C"
     }
 }
