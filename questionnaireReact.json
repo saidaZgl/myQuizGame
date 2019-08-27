@@ -1,0 +1,21 @@
+{
+    "question1": {
+        "difficulte": "facile",
+        "desc": "En quelle année a été crée React ?",
+        "reponseA": 2013,
+        "reponseB": 2000,
+        "reponseC": 1995,
+        "reponseD": 2003,
+        "bonneReponse": "A"
+    },
+
+    "question2": {
+        "difficulte": "moyenne",
+        "desc": "Par qui a été developpé React?",
+        "reponseA": "Microsoft",
+        "reponseB": "Google",
+        "reponseC": "Facebook",
+        "reponseD": "Twitter",
+        "bonneReponse": "C"
+    }
+}
