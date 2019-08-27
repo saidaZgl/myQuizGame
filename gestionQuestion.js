@@ -1,4 +1,3 @@
-var questionnaireJavascript = require("./questionnaire.json");
 var questionnaire = {
   afficherUneQuestion: function(question) {
     var txt = "";
@@ -11,19 +10,23 @@ var questionnaire = {
   },
 
   retourneNombreQuestionDuQuestionnaire: function(questionnaire) {
-    var nombreQuestion = 0;
+    var nombreDeQuestion = 0;
     for (var question in questionnaire) {
-      nombreQuestion++;
+      nombreDeQuestion++;
     }
-    return nombreQuestion;
+    return nombreDeQuestion;
+  },
+
+  genererQuestionAleatoire(questionnaire) {
+    var numeroQuestionAleatoire = Math.floor(
+      Math.random() *
+        this.retourneNombreQuestionDuQuestionnaire(questionnaire) +
+        1
+    );
+    this.afficherUneQuestion(
+      questionnaire["question" + numeroQuestionAleatoire]
+    );
   }
 };
 
-questionnaire.afficherUneQuestion(questionnaireJavascript.question3);
-var nombreQuestion = questionnaire.retourneNombreQuestionDuQuestionnaire(
-  questionnaireJavascript
-);
-console.log(
-  "Le nombre de questions du questionnaire sur JavaScript est de : " +
-    nombreQuestion
-);
+module.exports = questionnaire;
