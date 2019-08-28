@@ -20,10 +20,14 @@ var questionnaire = {
   },
 
   genererQuestionAleatoire(questionnaire) {
-    var numeroQuestionAleatoire = Math.floor(
-      Math.random() *
-        this.retourneNombreQuestionDuQuestionnaire(questionnaire) +
-        1
+    // var numeroQuestionAleatoire = Math.floor(
+    //   Math.random() *
+    //     this.retourneNombreQuestionDuQuestionnaire(questionnaire) +
+    //     1
+    // );
+    var numeroQuestionAleatoire = boiteOutil.genererChiffreAleatoire(
+      1,
+      this.retourneNombreQuestionDuQuestionnaire(questionnaire)
     );
     return questionnaire["question" + numeroQuestionAleatoire];
   },
