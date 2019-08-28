@@ -1,4 +1,5 @@
-var readline = require("readline-sync");
+var boiteOutil = require("./boiteOutil");
+
 var questionnaire = {
   afficherUneQuestion: function(question) {
     var txt = "";
@@ -27,7 +28,7 @@ var questionnaire = {
     return questionnaire["question" + numeroQuestionAleatoire];
   },
   saisirReponse() {
-    return readline.question("Quel est votre choix (A - B - C - D)?");
+    return boiteOutil.saisirUneChaine("Quel est votre choix (A - B - C - D)?");
   },
   estBonneReponse(question, reponse) {
     if (reponse === question.bonneReponse) {
