@@ -1,7 +1,6 @@
 // var questionnaireJavascript = require("./questionnaire.json");
 var boiteOutil = require("./boiteOutil");
 var gestionQuestionnaire = require("./gestionQuestionnaire");
-console.log(gestionQuestionnaire);
 
 var questionnaire = selectionQuestionnaire();
 var gestionQuestion = require("./gestionQuestion");
@@ -22,10 +21,9 @@ while (!isGameOver) {
 }
 
 function selectionQuestionnaire() {
-  var numeroQuestionnaire = boiteOutil.genererChiffreAleatoire(1, 3); // c'est 3 exclu
-  if (numeroQuestionnaire === 1) {
-    return require("./questionnaires/questionnaireReact.json");
-  } else {
-    return require("./questionnaires/questionnaireJs.json");
-  }
+  gestionQuestionnaire.afficherQuestionnaire();
+  var choixQuestionnaire = boiteOutil.saisirUneChaine("Quel est votre choix ?");
+
+  return require("./questionnaires/" +
+    gestionQuestionnaire[choixQuestionnaire]);
 }
