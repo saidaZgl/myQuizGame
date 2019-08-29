@@ -1,5 +1,8 @@
 // var questionnaireJavascript = require("./questionnaire.json");
 var boiteOutil = require("./boiteOutil");
+var gestionQuestionnaire = require("./gestionQuestionnaire");
+console.log(gestionQuestionnaire);
+
 var questionnaire = selectionQuestionnaire();
 var gestionQuestion = require("./gestionQuestion");
 
@@ -21,8 +24,8 @@ while (!isGameOver) {
 function selectionQuestionnaire() {
   var numeroQuestionnaire = boiteOutil.genererChiffreAleatoire(1, 3); // c'est 3 exclu
   if (numeroQuestionnaire === 1) {
-    return require("./questionnaireReact.json");
+    return require("./questionnaires/questionnaireReact.json");
   } else {
-    return require("./questionnaireJs.json");
+    return require("./questionnaires/questionnaireJs.json");
   }
 }
