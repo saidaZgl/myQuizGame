@@ -1,3 +1,4 @@
+var fs = require("fs");
 var joueursJSON = require("./joueurs.json");
 
 var joueur = {
@@ -20,8 +21,17 @@ var joueur = {
     txt += "ScoreMax :" + this.scoreMax + "\n";
     console.log(txt);
   },
-  gagnerPoint: function() {
-    this.score += 10;
+  gagnerPoint: function(point) {
+    this.score += point;
+  },
+  sauvegardeJoueur: function() {
+    if (
+      joueursJSON[this.nom] < this.score ||
+      joueursJSON[this.nom] === undefined
+    ) {
+      joueursJSON[this.nom] = this.score;
+    }
+    fs.writeFileSync("joueurs.json", JSON.stringify(joueursJSON, undefined, 4));
   }
 };
 

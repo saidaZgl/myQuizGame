@@ -1,6 +1,8 @@
 var boiteOutil = require("./boiteOutil");
 
 var questionnaire = {
+  questionUtilisee: [],
+
   afficherUneQuestion: function(question) {
     var txt = "";
     txt += question.desc + "\n";
@@ -19,18 +21,34 @@ var questionnaire = {
     return nombreDeQuestion;
   },
 
-  genererQuestionAleatoire(questionnaire) {
-    // var numeroQuestionAleatoire = Math.floor(
-    //   Math.random() *
-    //     this.retourneNombreQuestionDuQuestionnaire(questionnaire) +
-    //     1
-    // );
-    var numeroQuestionAleatoire = boiteOutil.genererChiffreAleatoire(
-      1,
-      this.retourneNombreQuestionDuQuestionnaire(questionnaire)
-    );
+  genererQuestionAleatoire: function(questionnaire) {
+    var numeroQuestionAleatoire = 0;
+    do {
+      numeroQuestionAleatoire = boiteOutil.genererChiffreAleatoire(
+        1,
+        this.retourneNombreQuestionDuQuestionnaire(questionnaire) + 1
+      );
+    } while (this.estQuestionUtilisee(numeroQuestionAleatoire));
+    this.questionUtilisee.push(numeroQuestionAleatoire);
     return questionnaire["question" + numeroQuestionAleatoire];
   },
+
+  estQuestionUtilisee: function(num) {
+    for (var i = 0; i < this.questionUtilisee.length; i++) {
+      if (num === this.questionUtilisee[i]) {
+        return true;
+      }
+    }
+    return false;
+  },
+
+  verifierQuestionnaireVide: function(questionnaire) {
+    return (
+      this.questionUtilisee.length ===
+      this.retourneNombreQuestionDuQuestionnaire(questionnaire)
+    );
+  },
+
   saisirReponse() {
     return boiteOutil.saisirUneChaine("Quel est votre choix (A - B - C - D)?");
   },
@@ -39,6 +57,15 @@ var questionnaire = {
       return true;
     } else {
       return false;
+    }
+  },
+  retourneNombrePoint(question) {
+    if (question.difficulte === "facile") {
+      return 1;
+    } else if (question.difficulte === "moyenne") {
+      return 3;
+    } else {
+      return 5;
     }
   }
 };

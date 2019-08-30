@@ -17,9 +17,14 @@ while (!isGameOver) {
   var reponse = gestionQuestion.saisirReponse();
   var isBonneReponse = gestionQuestion.estBonneReponse(question, reponse); //renvoie un booleen
   if (isBonneReponse) {
-    joueur.gagnerPoint();
+    var point = gestionQuestion.retourneNombrePoint(question);
+    joueur.gagnerPoint(point);
     joueur.afficherJoueur();
     console.log("C'est une bonne réponse !");
+    if (gestionQuestion.verifierQuestionnaireVide(questionnaire)) {
+      isGameOver = true;
+      console.log("Vous avez gagné");
+    }
   } else {
     console.log(
       "C'est une mauvaise réponse - Vous avez perdu - Votre score final est de : " +
@@ -29,6 +34,8 @@ while (!isGameOver) {
     isGameOver = true;
   }
 }
+
+joueur.sauvegardeJoueur();
 
 function selectionQuestionnaire() {
   gestionQuestionnaire.afficherQuestionnaire();
